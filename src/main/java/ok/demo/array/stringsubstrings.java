@@ -7,7 +7,7 @@ public class stringsubstrings {
 
   public static void main(String[] args) {
     List<List<String>> x = getAllSubStrings("abcd");
-    System.out.println(getAll(""));
+    System.out.println(getAll("abcd"));
   }
 
   private static List<List<String>> getAllSubStrings(String a) {

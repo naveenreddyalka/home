@@ -6,8 +6,8 @@ import java.util.List;
 public class stringpermutations {
 
     public static void main(String[] args) {
-        List<String> stL = getAllPerm("abcd");
-        perm("abcd", "");
+        List<String> stL = getAllPerm("abc");
+        perm("abc", "");
         
     }
 
