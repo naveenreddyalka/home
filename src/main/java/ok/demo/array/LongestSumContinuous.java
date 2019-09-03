@@ -2,7 +2,7 @@ package ok.demo.array;
 
 import java.util.Arrays;
 
-public class longestsumcontinuous {
+public class LongestSumContinuous {
     public static void main(String[] args) {
         int[] a = {2,-8,3,-2,4,-10,44};
         int[] b = {-2,11,-4,13,-5,2};

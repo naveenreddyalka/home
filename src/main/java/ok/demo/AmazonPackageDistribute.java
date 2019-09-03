@@ -1,11 +1,11 @@
-package ok;
+package ok.demo;
 
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-public class SolutionOlder {
+public class AmazonPackageDistribute {
 
   public static void main(String[] args) {
     ArrayList<Integer> intp = new ArrayList<Integer>();

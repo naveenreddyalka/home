@@ -2,14 +2,36 @@ package ok.demo.array;
 
 import java.util.Arrays;
 
-public class longestincresingsubsequence {
+public class LongestIncresingSubSequence {
 
     public static void main(String[] args) {
-        int[] a = {44, 2, -8, 3, 5,-2, 7, -10};
+        int[] a = {10,1,2,3,4,0};
         int[] r = getlongest(a);
         System.out.println(Arrays.toString(r));
+        System.out.println(getlongestDP(a,a.length) ); 
     }
 
+    private static int getlongestDP(int a[],int n) {
+        int[] st = new int[n];
+        for(int i =0;i<n;i++)
+            st[i]=1;
+        
+        for(int i=0;i<n;i++) {
+            for(int j=0;j<i;j++) {
+                if(a[i] > a[j] && st[i] < st[j]+1) {
+                    st[i] = st[j]+1;
+                }
+            }
+        }
+        int max = -1;
+        for(int i=0;i<n;i++) {
+            if(st[i]>max) max = st[i];
+        }
+        
+        return max;
+    }
+        
+    
     private static int[] getlongest(int a[]) {
         int[][] r = new int[a.length][a.length];
         //r[0] = new int[r.length];

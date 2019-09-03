@@ -1,4 +1,4 @@
-package ok.triplebyte;
+package ok.test.triplebyte;
 
 import java.util.ArrayList;
 import java.util.List;

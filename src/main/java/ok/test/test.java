@@ -1,24 +1,25 @@
-package ok.test;
+package ok;
+
+import java.util.Scanner;
 
 public class test {
 
   public static void main(String[] args) {
-    test t = new test();
-    int[] s = {4, 5, 6};
-    t.shortestSubarray(s, 3);
+    String number = "123456789";
+
+    System.out.println(number.substring(number.length() - 7));
   }
 
-  public int shortestSubarray(int[] A, int K) {
+  public static void main2(String args[]) throws Exception {
+    /* Enter your code here. Read input from STDIN. Print output to STDOUT */
+    Scanner input = new Scanner(System.in).useDelimiter("\n");
+    out("Enter");
+    while (input.hasNextLine()) {}
 
-    int min = -1;
+    input.close();
+  }
 
-    int[] S = new int[A.length];
-    S[0] = A[0];
-
-    for (int i = 0; i < A.length - 1; i++) {
-      S[i + 1] = S[i] + A[i + 1];
-    }
-    
-    return min;
+  private static void out(String str) {
+    System.out.println(str);
   }
 }

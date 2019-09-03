@@ -1,4 +1,4 @@
-package ok;
+package ok.demo;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,7 +9,7 @@ import java.util.Scanner;
 import java.util.Set;
 import java.util.StringTokenizer;
 
-public class SolutionOld {
+public class SannerAndMatrixPaths {
 
   public StringTokenizer tokenizer;
   
