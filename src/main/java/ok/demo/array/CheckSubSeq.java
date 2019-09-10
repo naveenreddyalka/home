@@ -1,6 +1,6 @@
 package ok.demo.array;
 
-public class checksubseq {
+public class CheckSubSeq {
 
     public static void main(String[] args) {
         System.out.println(checkSub("ADXCPY", "AXY"));

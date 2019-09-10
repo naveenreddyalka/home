@@ -2,6 +2,7 @@ package ok.demo.linkedlist;
 
 public class llproblems {
 
+    
   public static void main(String[] args) {
     ll one = new ll(1, new ll(2, new ll(3, new ll(3, new ll(5, null)))));
 

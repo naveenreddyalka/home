@@ -8,15 +8,70 @@ import java.util.Map;
 public class AllPalindroms {
 
   public static void main(String[] args) {
-    
-    System.out.println(countPalindromes("abaaa"));
-   
+
+    System.out.println(countPalindromes("abbab"));
+    printAllPalindromes("abbab");
     List<Integer> songs = new ArrayList<Integer>();
     songs.add(60);
     songs.add(60);
     songs.add(60);
 
-   // System.out.println(playlist(songs));
+    // System.out.println(playlist(songs));
+  }
+
+  public static void printAllPalindromes(String s) {
+
+    for (int k = 0; k < s.length(); k++) {
+      int i = k;
+      int j = k;
+      while (i >= 0 && j <= s.length() - 1) {
+        if (s.charAt(i) == s.charAt(j)) {
+          System.out.println(s.substring(i, j + 1));
+          i--;
+          j++;
+        } else {
+          break;
+        }
+      }
+
+      i = k;
+      j = k + 1;
+      while (i >= 0 && j <= s.length() - 1) {
+        if (s.charAt(i) == s.charAt(j)) {
+          System.out.println(s.substring(i, j + 1));
+          i--;
+          j++;
+        } else {
+          break;
+        }
+      }
+    }
+  }
+
+  public static int countPalindromes(String s) {
+
+    int n = s.length();
+    int R[][] = new int[n][n];
+    boolean P[][] = new boolean[n][n];
+
+    for (int i = 0; i < n; i++) P[i][i] = true;
+
+    for (int i = 0; i < n - 1; i++) {
+      if (s.charAt(i) == s.charAt(i + 1)) {
+        P[i][i + 1] = true;
+        R[i][i + 1] = 1;
+      }
+    }
+
+    for (int gap = 2; gap < n; gap++) {
+      for (int i = 0; i < n - gap; i++) {
+        int j = gap + i;
+        if (s.charAt(i) == s.charAt(j) && P[i + 1][j - 1]) P[i][j] = true;
+        if (P[i][j] == true) R[i][j] = R[i][j - 1] + R[i + 1][j] + 1 - R[i + 1][j - 1];
+        else R[i][j] = R[i][j - 1] + R[i + 1][j] - R[i + 1][j - 1];
+      }
+    }
+    return R[0][n - 1];
   }
 
   public static long playlist(List<Integer> songs) {
@@ -58,32 +113,6 @@ public class AllPalindroms {
     }
 
     return (long) (count / 2);
-  }
-
-  public static int countPalindromes(String s) {
-
-    int n = s.length();
-    int R[][] = new int[n][n];
-    boolean P[][] = new boolean[n][n];
-
-    for (int i = 0; i < n; i++) P[i][i] = true;
-
-    for (int i = 0; i < n - 1; i++) {
-      if (s.charAt(i) == s.charAt(i + 1)) {
-        P[i][i + 1] = true;
-        R[i][i + 1] = 1;
-      }
-    }
-
-    for (int gap = 2; gap < n; gap++) {
-      for (int i = 0; i < n - gap; i++) {
-        int j = gap + i;
-        if (s.charAt(i) == s.charAt(j) && P[i + 1][j - 1]) P[i][j] = true;
-        if (P[i][j] == true) R[i][j] = R[i][j - 1] + R[i + 1][j] + 1 - R[i + 1][j - 1];
-        else R[i][j] = R[i][j - 1] + R[i + 1][j] - R[i + 1][j - 1];
-      }
-    }
-    return R[0][n - 1];
   }
 
   public abstract class Shape {

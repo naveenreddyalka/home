@@ -6,7 +6,7 @@ import java.util.List;
 public class stringsubstrings {
 
   public static void main(String[] args) {
-    List<List<String>> x = getAllSubStrings("abcd");
+    //List<List<String>> x = getAllSubStrings("abcd");
     System.out.println(getAll("abcd"));
   }
 

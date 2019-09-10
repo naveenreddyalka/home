@@ -7,11 +7,12 @@ import java.util.Map;
 
 public class Solution {
 
+    int a = 10;
   public static void main(String[] args) {
 
   }
 
-  private static List<List<Integer>> optimalUtilization(int maxTravelDist,
+  public  List<List<Integer>> optimalUtilization(int maxTravelDist,
       List<List<Integer>> forwardRouteList, List<List<Integer>> returnRouteList) {
 
     List<List<Integer>> result = new ArrayList<List<Integer>>();

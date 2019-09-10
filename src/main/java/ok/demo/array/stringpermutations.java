@@ -11,13 +11,13 @@ public class stringpermutations {
         
     }
 
-    private static void perm(String str, String pre) {
+    private static void perm(String pre,String str) {
         if (str == null || str.length() == 0)
             System.out.println(pre);
         else {
             for (int i = 0; i < str.length(); i++) {
                 String rem = str.substring(0, i) + str.substring(i + 1);
-                perm(rem, pre + str.charAt(i));
+                perm(pre + str.charAt(i),rem);
             }
         }
     }

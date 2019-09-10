@@ -24,9 +24,9 @@ public class allpaths<T> {
     
 
     //get(root,new ArrayList<Integer>());
-    //System.out.println(print(root));
-    //getByInt(root, new int[4], 0);
-    System.out.println(lcm(root, 8, 11).getValue());
+    //print(root,"");
+    getByInt(root, new int[4], 0);
+    //System.out.println(lcm(root, 8, 11).getValue());
   }
 
   private static void print(node root,String path) {
@@ -54,10 +54,10 @@ public class allpaths<T> {
       path.remove(path.size()-1);
       return;
     }
-    if(root.getLeft()!=null)get(root.getLeft(), path);
-    if(root.getRight()!=null)get(root.getRight(), path);
+    if(root.getLeft()!=null)get(root.getLeft(), new ArrayList<Integer>(path));
+    if(root.getRight()!=null)get(root.getRight(), new ArrayList<Integer>(path));
     
-    path.remove(path.size()-1);
+    //path.remove(path.size()-1);
   }
   
   private static void getByInt(node root,int[] path,int height) {

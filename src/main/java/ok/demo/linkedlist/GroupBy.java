@@ -19,7 +19,7 @@ public class GroupBy {
 		int[] count = new int[1];
 		Map<Integer, List<Integer>> chunkedKeys = nums.stream().collect(Collectors.groupingBy(k -> {
 			count[0]++;
-			return Math.floorDiv(count[0], 1000);
+			return Math.floorDiv(count[0], 10);
 		}));
 		
 		System.out.println(chunkedKeys);

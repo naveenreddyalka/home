@@ -11,38 +11,35 @@ import org.junit.Test;
 
 public class Toptal3 {
 
+  public int test1(int a, int b) {
+    int carryCount = 0;
+    int carry = 0;
+    while (a > 10 || b > 10) {
+      // a = 123
+      int ac = a % 10;
 
-  public void test1() {
-      
-      
-      
-      
-      
-      
-      
-      
+      // b=87
+      int bc = b % 10;
+
+      if (ac + bc + carry >= 10) {
+        carry = 1;
+        carryCount++;
+      } else {
+        carry = 0;
+      }
+
+      a = a / 10;
+      b = b / 10;
+    }
+
+    if (a + b + carry >= 10) {
+      carryCount++;
+    }
+
+    return carryCount;
   }
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
 
   public static void main(String[] args) {
-      
-      int arr2[][] = new int[4][4];
-      arr2[0] = new int[] {1, 2, 3, 4};
-      System.out.println(arr2[0][1]);
 
     /*int arr[] = {1, 9, 87};
 
