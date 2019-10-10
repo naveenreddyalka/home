@@ -15,10 +15,14 @@ public class SannerAndMatrixPaths {
   
   public static List<String> paths = new ArrayList<String>();
   
-  
+  public static getStr(String a, String b) {
+      
+  }
 
   public static void main(String[] args) {
     int[][] A = {{1,2,3},{4,5,6},{7,8,9}};
+    String a = "";
+    a.n
     int[][] B = {{1,2},{3,4}};
     int[] intpath = new int[3*3];
     int[][] intpaths = new int[10000][3*3];

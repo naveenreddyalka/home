@@ -1,0 +1,13 @@
+
+%%%%%%%%%%%%%%%%%%%
+% File: warehouse.lp: Automated Warehouse
+%%%%%%%%%%%%%%%%%%%
+
+#const n=100.
+% sort and object declaration
+
+object(node,1..n*n;highway,1..n*n;pickingStation,1..n*n;robot,1..n*n;shelf,1..n*n;product,1..n*n;order,1..n*n).
+objectAction(at;on;pickingStation;line).
+pair(1..n,1..n).
+
+1{init(object(B,I),value(A,pair(X,Y))):pair(X,Y)}1 :- object(B,I),objectAction(A).

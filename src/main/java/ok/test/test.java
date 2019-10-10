@@ -1,13 +1,24 @@
-package ok;
+package ok.test;
 
 import java.util.Scanner;
 
 public class test {
 
-  public static void main(String[] args) {
-    String number = "123456789";
+  static int b = getValue();
+  static int a = 10;
 
-    System.out.println(number.substring(number.length() - 7));
+  static int getValue() {
+    return a;
+  }
+  
+  static int doSum() { return a+b;}
+  static int doM() { return a-b;}
+  public static void main(String[] args) {
+    System.out.println(doSum());
+    System.out.println(doM());
+      //String number = "123456789";
+
+    //System.out.println(number.substring(number.length() - 7));
   }
 
   public static void main2(String args[]) throws Exception {

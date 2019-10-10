@@ -10,6 +10,69 @@ import java.util.stream.Collectors;
 import org.junit.Test;
 
 public class Toptal3 {
+    
+    
+    public static void main(String[] argv) {
+        String expression1 = "6+9-12"; // = 3
+        String expression2 = "1+2-3+4-5+6-7"; // = -2
+        String expression3 = "100+200+300"; // = 600
+        String expression4 = "1-2-3-0"; // = -4
+        String expression5 = "255"; // = 25
+        
+        System.out.println(getValue("6+9-12"));
+      }
+      
+      public static int getValue(String ex){
+        int sum =0;
+        Character lastOp = null;
+        
+        if(ex==null || ex.length()==0 || getOp(ex.charAt(0))){ return -1;}
+        String pre = null;
+        String cur = "";
+       for(int i=0;i<ex.length();i++){
+           
+          char  c  = ex.charAt(i);
+          if(getOp(c)){
+              pre = cur;
+              if(lastOp==null) {
+                  sum = sum + Integer.parseInt(pre);
+              }else {
+                  sum = getSum(lastOp, sum, Integer.parseInt(pre));
+              }
+              lastOp = c;
+              cur="";
+            }else{
+                
+                cur= cur+c;
+          }
+            
+        }
+       return getSum(lastOp, sum, Integer.parseInt(cur));
+        
+      }
+      
+       
+      public static  int getSum(Character c, int sum, int val) {
+          if(c==null) return val;
+          if(c=='-') {
+              return sum - val;
+          } else {
+              return sum + val;
+          }
+         
+      }
+      
+      
+      
+        public static  boolean getOp(char c) {
+          if(c=='-') return true;
+          if(c=='+') return true;
+          return false;
+      }
+        
+        
+        
+        
 
   public int test1(int a, int b) {
     int carryCount = 0;

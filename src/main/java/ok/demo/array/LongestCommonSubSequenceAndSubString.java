@@ -7,16 +7,17 @@ public class LongestCommonSubSequenceAndSubString {
     
     
     public static void main(String[] args) {
-        getLongString("ABCcccBDBF","A1111BF",0,"ABCcccBDBF".length(),0,"A1111BF".length());
-        System.out.println(getLongStringDP("ABCcccBDBF","A1111BF","ABCcccBDBF".length(),"A1111BF".length()));
-        System.out.println(longest); 
-        System.out.println(getLongSub("ABCcccBDBF","A1111BF",0,0));
+        //getLongSubString("ABCcccBDBAF","A1111BF",0,"ABCcccBDBAF".length(),0,"A1111BF".length());
        
-        System.out.println(getLongSubDP("ABCcccBDBF", "A1B111F")); 
+        System.out.println(getLongSubStringDP("ABCcccBDBAF","A1111BAF","ABCcccBDBAF".length(),"A1111BAF".length()));
+        //System.out.println(longest); 
+        //System.out.println(getLongSub("ABCcccBDBF","A1111BF",0,0));
+       
+        //System.out.println(getLongSubDP("ABCcccBDBF", "A1B111F")); 
         
     }
     
-    private static void getLongString(String p1,String p2,int i,int j,int k,int l) {
+    private static void getLongSubString(String p1,String p2,int i,int j,int k,int l) {
         if(i==j || k==l) {
             return ;
         }
@@ -26,13 +27,13 @@ public class LongestCommonSubSequenceAndSubString {
                 longest = p1.substring(i,j);
             }
         }else {
-            getLongString(p1, p2, i+1, j,k,l);
-            getLongString(p1, p2, i, j-1,k,l);
-            getLongString(p1, p2, i, j,k+1,l);
-            getLongString(p1, p2, i, j,k,l-1);
+            getLongSubString(p1, p2, i+1, j,k,l);
+            getLongSubString(p1, p2, i, j-1,k,l);
+            getLongSubString(p1, p2, i, j,k+1,l);
+            getLongSubString(p1, p2, i, j,k,l-1);
         }
     }
-    private static int getLongStringDP(String p1,String p2,int k,int l) {
+    private static int getLongSubStringDP(String p1,String p2,int k,int l) {
         int LCStuff[][] = new int[k + 1][l + 1]; 
         int result = 0;  // To store length of the longest common substring 
           

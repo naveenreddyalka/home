@@ -1,7 +1,16 @@
 package ok.demo.old;
 
 public class Rotate {
-    public static void main(String[] args) {
+    
+    
+    
+    public Rotate() {
+    super();
+    // TODO Auto-generated constructor stub
+  }
+
+
+  public static void main(String[] args) {
 	Rotate r = new Rotate();
 	r.solution(new int[] { 1, 8, 27, 64, 125, 216, 343 }, 1);
     }
