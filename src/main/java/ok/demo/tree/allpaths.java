@@ -23,7 +23,8 @@ public class allpaths<T> {
 
     
 
-    //get(root,new ArrayList<Integer>());
+    get(root,new ArrayList<Integer>());
+    System.out.println("*********************");
     //print(root,"");
     getByInt(root, new int[4], 0);
     //System.out.println(lcm(root, 8, 11).getValue());
@@ -51,7 +52,7 @@ public class allpaths<T> {
     if(root.getLeft()== null && root.getRight()==null) {
       path.forEach(s -> System.out.print("-"+s));
       System.out.println();
-      path.remove(path.size()-1);
+      //path.remove(path.size()-1);
       return;
     }
     if(root.getLeft()!=null)get(root.getLeft(), new ArrayList<Integer>(path));

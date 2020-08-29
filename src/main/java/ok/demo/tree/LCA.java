@@ -41,7 +41,7 @@ public class LCA {
         result rx = getLcaCorrect(root.getLeft(), one, two);
         if(rx.isLca) return rx;
         
-        result ry = getLcaCorrect(root.getLeft(), one, two);
+        result ry = getLcaCorrect(root.getRight(), one, two);
         if(ry.isLca) return ry;
         
         if(rx.root!=null && ry.root !=null) {

@@ -19,7 +19,7 @@ public class Pattern {
             maps.put(nums[i], i);
         }
         
-        List<Integer> numList =  Arrays.stream(nums).boxed().collect(Collectors.toList());
+        List<Integer> numList =  Arrays.stream(nums).boxed().collect(Collectors.<Integer>toList());
         
         Collections.sort(numList);
         int j = numList.size()-1;
