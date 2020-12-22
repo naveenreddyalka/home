@@ -5,9 +5,13 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
+import java.util.Map;
+import java.util.Map.Entry;
 import java.util.Queue;
+import java.util.Set;
 
 public class amazon {
 
@@ -129,6 +133,15 @@ public class amazon {
 	
 	boolean isNumeric(String str) { 
 		  try {  
+			  
+			  Map<String, String> os = new HashMap<String, String>();
+			 Set<Entry<String, String>> a =  os.entrySet();
+			 
+			 for(Entry<String, List<String>> al : a){
+		           al.v
+		       }
+		         
+			 System.out.println();
 		    Integer.parseInt(str);  
 		    return true;
 		  } catch(NumberFormatException e){  

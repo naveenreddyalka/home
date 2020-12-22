@@ -1,6 +1,8 @@
 package ok.demo.array;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class LongestIncresingSubSequence {
 
@@ -53,6 +55,9 @@ public class LongestIncresingSubSequence {
     private static int[] findMaxAtN(int[][] r, int a, int n) {
         int maxAt = 0;
         int max = 0;
+        Map<Character,Integer> pCount = new HashMap<Character,Integer>();
+        Map<Character,Integer> temp = new HashMap<Character,Integer>(pCount);
+        
         for (int i = 0; i < n; i++) {
             int non = getNonZero(r[i]);
             if (r[i].length > 0 && r[i][non] < a) {

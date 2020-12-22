@@ -1,5 +1,7 @@
 package ok.demo.linkedlist;
 
+import java.util.PriorityQueue;
+
 public class llproblems {
 
     
@@ -17,6 +19,12 @@ public class llproblems {
     
     ll start = loop(l1);
     System.out.println(start);
+    
+    //Min on top, so min heap
+    PriorityQueue<Integer> pqI = new PriorityQueue<Integer>();
+    
+    PriorityQueue<String> pq = new PriorityQueue<>((a,b)->b.compareTo(a));
+    
 
   }
   
