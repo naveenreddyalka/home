@@ -1,3 +1,4 @@
+/*
 package ok.example.client;
 
 import java.util.ArrayList;
@@ -46,41 +47,44 @@ public class EmployeeWebClient {
 			e.printStackTrace();
 		}
 
-		/*
+		*/
+/*
 		 * Flux<Integer> ints = Flux.range(1, 4) .map(i -> { if (i <= 3) return i; throw
 		 * new RuntimeException("Got to 4"); });
-		 * 
+		 *
 		 * ints.subscribe(i -> System.out.println(i), error ->
 		 * System.err.println("Error: " + error));
-		 * 
-		 * 
+		 *
+		 *
 		 * Flux<String> bridge = Flux.create(sink -> { sink.next("one");
 		 * sink.complete(); //sink. });
-		 * 
-		 * 
-		 * 
+		 *
+		 *
+		 *
 		 * Mono.just("tetsing").flatMap(s -> { Mono.subscriberContext().map( m -> {
 		 * m.put(2, 2); return m; }).subscribe(c -> { System.out.println("1-> "
 		 * +c.get("1") + " = "+ c.toString()); }); return Mono.just(s);
 		 * }).subscriberContext( con -> { con.put("1", 1); return con; }).subscribe(c ->
 		 * { Mono.subscriberContext().subscribe(b -> { System.out.println("1-> " +
 		 * b.toString()); }); System.out.println("2-> " + c.toString()); });
-		 * 
-		 * 
+		 *
+		 *
 		 * WebClient client = WebClient.create("http://localhost:8080"); Mono<Employee>
 		 * employeeMono = client.get().uri("/employees/{id}",
 		 * "1").retrieve().bodyToMono(Employee.class);
-		 * 
+		 *
 		 * employeeMono.subscribe(System.out::println);
-		 * 
+		 *
 		 * Flux<Employee> employeeFlux =
 		 * client.get().uri("/employees").retrieve().bodyToFlux(Employee.class);
-		 * 
+		 *
 		 * employeeFlux.subscribe(System.out::println);
-		 * 
+		 *
 		 * try { Thread.sleep(100000); } catch (InterruptedException e) { // TODO
 		 * Auto-generated catch block e.printStackTrace(); }
-		 */
+		 *//*
+
 	}
 
 }
+*/

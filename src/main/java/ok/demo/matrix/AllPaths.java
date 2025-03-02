@@ -1,3 +1,4 @@
+/*
 package ok.demo.matrix;
 
 import java.util.ArrayList;
@@ -44,16 +45,15 @@ public class AllPaths {
       if(c=='+') return true;
       return false;
   }
-  
+
   public static  int getSum(char c, int sum, int val) {
       if(c=='-') {
           return sum - val;
       } else {
           return sum + val;
       }
-     System.out.println();
   }
-  
+
   public static int getValue(String ex){
       int sum =-1;
       Character lastOp = '*';
@@ -67,20 +67,20 @@ public class AllPaths {
         }else{
           v = v+c;
         }
-          
+
       }
-      
-      
+
+
     }
-  
-  
-  
+
+
+
   public static  boolean getOp(int in , char c) {
       if(c=='-') return true;
       if(c=='+') return true;
       return false;
   }
-  
+
   private static int findShortest(int[][] mat, int m, int n) {
 
     Queue<Point> points = new LinkedList<Point>();
@@ -92,13 +92,13 @@ public class AllPaths {
     p.y = 0;
     points.add(p);
     points.add(null);
-    
+
     String a = " ";
     a.length()
     charAt(index)
 
-    
-    
+
+
     int steps = 0;
     boolean reached = false;
     while (!points.isEmpty()) {
@@ -182,3 +182,4 @@ public class AllPaths {
     return path = path + "->" + a;
   }
 }
+*/
