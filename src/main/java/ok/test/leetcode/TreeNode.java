@@ -1,7 +1,7 @@
 package ok.test.leetcode;
 
-public class TreeNode {
-	int val;
+class TreeNode {
+	public int val;
 	TreeNode left;
 	TreeNode right;
 

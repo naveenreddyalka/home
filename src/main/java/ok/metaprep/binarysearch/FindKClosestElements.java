@@ -8,36 +8,28 @@ import java.util.Stack;
 public class FindKClosestElements {
 
 
-  public static String removeDuplicates(String s) {
-    int min = Integer.MAX_VALUE;
-    int[] profits = new int[10];
-    // Replace this placeholder return statement with your code
-    Stack<Character> stac = new Stack();
 
-    for(int i=0; i<s.length();i++){
-      if(stac.peek()==s.charAt(i)){
+  public static String removeDuplicates(String s) {
+    Stack<Character> stac = new Stack();
+    for (int i = 0; i < s.length(); i++) {
+      if (stac.peek() == s.charAt(i)) {
         stac.pop();
         continue;
       }
       stac.push(s.charAt(i));
     }
-
     StringBuilder sb = new StringBuilder();
-
-    while(!stac.isEmpty()){
+    while (!stac.isEmpty()) {
       sb.append(stac.pop());
     }
-
-
-    return  sb.reverse().toString();
+    return sb.reverse().toString();
   }
 
 
   public static void main(String[] args) {
-
-        int[] test = {1,2,3,4,5};
+    int[] test = {1, 2, 3, 4, 5};
     List<Integer> r = findClosestElements(test, 4, 3);
-      System.out.println(r.toArray());
+    System.out.println(r.toArray());
   }
 
   public static List<Integer> findClosestElements(int[] arr, int k, int x) {
@@ -65,50 +57,52 @@ public class FindKClosestElements {
   }
 
   public static List<Integer> findClosestElementsSlow(int[] arr, int k, int x) {
-      if(arr==null || arr.length==0) return null;
+    if (arr == null || arr.length == 0) {
+      return null;
+    }
 
-      int closest = -1;
-      int l = 0, r = arr.length-1;
-      while(r-l>1){
-        int mid = l + (r-l)/2;
-        if(arr[mid]>x){
-              r = mid;
-        }else if (arr[mid]<x){
-              l = mid;
-        }else {
-              closest = mid;
-              break;
-        }
+    int closest = -1;
+    int l = 0, r = arr.length - 1;
+    while (r - l > 1) {
+      int mid = l + (r - l) / 2;
+      if (arr[mid] > x) {
+        r = mid;
+      } else if (arr[mid] < x) {
+        l = mid;
+      } else {
+        closest = mid;
+        break;
       }
+    }
 
     List<Integer> result = new ArrayList<>();
 
-     int ll, rr;
-      if(closest!=-1){
-         ll=closest;
-         rr=closest+1;
-      }else{
-        ll=l;
-        rr=r;
-      }
+    int ll, rr;
+    if (closest != -1) {
+      ll = closest;
+      rr = closest + 1;
+    } else {
+      ll = l;
+      rr = r;
+    }
 
-    while(result.size()<k && (ll>=0 && rr<arr.length)){
-      if(Math.abs(arr[ll]-x) <= Math.abs(arr[rr]-x)){
+    while (result.size() < k && (ll >= 0 && rr < arr.length)) {
+      if (Math.abs(arr[ll] - x) <= Math.abs(arr[rr] - x)) {
         result.add(arr[ll]);
         ll--;
-      }else{
+      } else {
         result.add(arr[rr]);
         rr++;
       }
     }
-    if(result.size()<k){
-      if(ll<0){
-        while(result.size()<k){
+    if (result.size() < k) {
+      if (ll < 0) {
+        while (result.size() < k) {
           result.add(arr[rr]);
           rr++;
         }
-      }else{
-        while(result.size()<k){
+      } else {
+        while (result.size() < k) {
           result.add(arr[ll]);
           ll--;
         }
@@ -119,17 +113,19 @@ public class FindKClosestElements {
   }
 
   public static List<Integer> findClosestElementsExcludeX(int[] arr, int k, int x) {
-    if(arr==null || arr.length==0) return null;
+    if (arr == null || arr.length == 0) {
+      return null;
+    }
 
     int closest = -1;
-    int l = 0, r = arr.length-1;
-    while(r-l>1){
-      int mid = l + (r-l)/2;
-      if(arr[mid]>x){
+    int l = 0, r = arr.length - 1;
+    while (r - l > 1) {
+      int mid = l + (r - l) / 2;
+      if (arr[mid] > x) {
         r = mid;
-      }else if (arr[mid]<x){
+      } else if (arr[mid] < x) {
         l = mid;
-      }else {
+      } else {
         closest = mid;
         break;
       }
@@ -138,31 +134,31 @@ public class FindKClosestElements {
     List<Integer> result = new ArrayList<>();
 
     int ll, rr;
-    if(closest!=-1){
-      ll=closest-1;
-      rr=closest+1;
-    }else{
-      ll=l;
-      rr=r;
+    if (closest != -1) {
+      ll = closest - 1;
+      rr = closest + 1;
+    } else {
+      ll = l;
+      rr = r;
     }
 
-    while(result.size()<k && (ll>=0 && rr<arr.length)){
-      if(Math.abs(arr[ll]-x) <= Math.abs(arr[rr]-x)){
+    while (result.size() < k && (ll >= 0 && rr < arr.length)) {
+      if (Math.abs(arr[ll] - x) <= Math.abs(arr[rr] - x)) {
         result.add(arr[ll]);
         ll--;
-      }else{
+      } else {
         result.add(arr[rr]);
         rr++;
       }
     }
-    if(result.size()<k){
-      if(ll<0){
-        while(result.size()<k){
+    if (result.size() < k) {
+      if (ll < 0) {
+        while (result.size() < k) {
           result.add(arr[rr]);
           rr++;
         }
-      }else{
-        while(result.size()<k){
+      } else {
+        while (result.size() < k) {
           result.add(arr[ll]);
           ll--;
         }
@@ -170,7 +166,6 @@ public class FindKClosestElements {
     }
     return result;
   }
-
 
 
 }

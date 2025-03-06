@@ -1,7 +1,9 @@
 package ok.metaprep.subsets;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedHashSet;
+import java.util.List;
 import java.util.Set;
 
 public class Permutation {
@@ -37,8 +39,43 @@ public class Permutation {
     return sb.toString();
   }
 
+  public static List<List<Integer>> permute(int[] nums) {
+    List<List<Integer>> result2 = new ArrayList<>();
+    fill2(0,nums,result2);
+    return result2;
+  }
+
+  static List<Integer> convertArrayToList(int[] arr) {
+    List<Integer> list = new ArrayList<>();
+    for (int num : arr) {
+      list.add(num);
+    }
+    return list;
+  }
+
+
+  public static void fill2(int index,int[] nums,List<List<Integer>> result){
+    if (index == nums.length) {
+      result.add(convertArrayToList(nums));
+    }
+    for(int i=index; i< nums.length-1;i++){
+      for(int j=i; j< nums.length-1;j++){
+        swap(nums,i,j);
+        fill2(index+1,nums,result);
+        swap(nums,j,i);
+      }
+    }
+  }
+
+  public static void swap(int[] nums, int i , int j){
+    int temp = nums[j];
+    nums[j] = nums[i];
+    nums[i] = temp;
+  }
+
   public static void main(String[] args) {
     permuteWord("xyz");
+    permute(new int[]{1,2,3});
   }
 
 }

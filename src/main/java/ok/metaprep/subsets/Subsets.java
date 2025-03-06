@@ -6,9 +6,6 @@ import java.util.List;
 public class Subsets {
 
   public static List<List<Integer>> findAllSubsets(int[] nums) {
-    String word = "";
-
-    new String(word.toCharArray());
 
     List<List<Integer>> setsList= new ArrayList<>();
     setsList.add(new ArrayList<>());

@@ -1,6 +1,7 @@
 package ok.metaprep.subsets;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -9,7 +10,7 @@ public class LetterCombinationsPhoneNumber {
 
 
   public void backtrack(int index, StringBuilder path, String digits, Map<Character, String[]> letters, List<String> combinations) {
-    if (path.length() == digits.length()) {
+      if (path.length() == digits.length()) {
 
       combinations.add(path.toString());
       return;
@@ -42,13 +43,35 @@ public class LetterCombinationsPhoneNumber {
     digitsMapping.put('7', new String[]{"p", "q", "r", "s"});
     digitsMapping.put('8', new String[]{"t", "u", "v"});
     digitsMapping.put('9', new String[]{"w", "x", "y", "z"});
+
+
     backtrack(0, new StringBuilder(), digits, digitsMapping, combinations);
 
     return combinations;
   }
 
 
+  public void backtrack2(int index, StringBuilder path, String digits, Map<Character, String[]> letters, List<String> combinations) {
+   if( path.length() == digits.length()) {
+     combinations.add(path.toString());
+     return;
+   }
+
+   char digit = digits.charAt(index);
+   String[] curr_letters = letters.get(digit);
+    for(int i=0; i<curr_letters.length; i++) {
+      path.append(curr_letters[i]);
+      backtrack2(index+1, path, digits, letters, combinations);
+      path.deleteCharAt(path.length() - 1);
+    }
+
+  }
+
+
   public static void main(String[] args){
+
+    int[] digits = {2,3,4,5,6,7,8,9};
+    List<Integer> l = new ArrayList(Arrays.asList(digits));
     LetterCombinationsPhoneNumber sol = new LetterCombinationsPhoneNumber();
     String[] digitsArray = {"23", "73", "426", "78", "925", "2345"};
     for(int i = 0; i < digitsArray.length; i++){
